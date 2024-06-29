@@ -1,5 +1,7 @@
 # Ifunny Logo Remover [![Views](https://hits.sh/github.com/e43bifunnyeng/hits.svg)](https://github.com/e43b/Ifunny-Logo-Remover/)
 
+## [Português](Readme-pt.md) | [English](README.md)
+
 ![Banner](imgs/banner.png)
 
 #### [Site](https://e43b.github.io/Ifunny-Logo-Remover/)
@@ -32,3 +34,4 @@ Após adicionar os arquivos ou links, a imagem original e a imagem com a logo re
 ---
 
 Este projeto é hospedado em [e43b.github.io/Logo-Remove-Ifunny/](https://e43b.github.io/Logo-Remove-Ifunny/)
+Criado por [E43b](https://github.com/e43b/)
