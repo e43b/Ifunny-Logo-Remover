@@ -4,7 +4,7 @@
 
 ![Banner](imgs/banner.png)
 
-## [Site](https://e43b.github.io/Ifunny-Logo-Remover/)
+# [Site](https://e43b.github.io/Ifunny-Logo-Remover/)
 
 ## Interface
 
