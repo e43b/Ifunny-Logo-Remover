@@ -1,6 +1,6 @@
 # Ifunny Logo Remover
 
-[Site](https://e43b.github.io/Logo-Remove-Ifunny/)
+[Site](https://e43b.github.io/Ifunny-Logo-Remover/)
 
 ### Número de Pixels a serem Removidos
 
