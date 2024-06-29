@@ -1,8 +1,12 @@
 # Ifunny Logo Remover
 
 ![Banner](imgs/banner.png)
-[Site](https://e43b.github.io/Ifunny-Logo-Remover/)
 
+#### [Site](https://e43b.github.io/Ifunny-Logo-Remover/)
+
+## Interface
+
+![Home](imgs/home.png)
 
 ### Número de Pixels a serem Removidos
 
@@ -21,6 +25,9 @@ Adicione os links das imagens separados por vírgulas para processamento direto 
 ### Visualização e Download
 
 Após adicionar os arquivos ou links, a imagem original e a imagem com a logo removida serão exibidas abaixo. Clique na imagem sem a logo para iniciar o download automaticamente.
+
+![Logo](imgs/logo.png)
+![No Logo](imgs/nologo.png)
 
 ---
 
