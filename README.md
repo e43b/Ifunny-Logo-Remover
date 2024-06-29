@@ -1,4 +1,4 @@
-# Ifunny Logo Remover
+# Ifunny Logo Remover [![Views](https://hits.sh/github.com/e43bifunnyeng/hits.svg)](https://github.com/e43b/Ifunny-Logo-Remover/)
 
 ![Banner](imgs/banner.png)
 
