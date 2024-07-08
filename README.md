@@ -35,8 +35,3 @@ After adding files or links, the original image and the image with the logo remo
 
 This project is hosted at [e43b.github.io/Logo-Remove-Ifunny/](https://e43b.github.io/Logo-Remove-Ifunny/)
 Created by [E43b](https://github.com/e43b/)
-
----
-
-Este projeto é hospedado em [e43b.github.io/Logo-Remove-Ifunny/](https://e43b.github.io/Logo-Remove-Ifunny/)
-Criado por [E43b](https://github.com/e43b/)
