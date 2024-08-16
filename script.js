@@ -4,6 +4,62 @@ document.getElementById('upload').addEventListener('change', function(e) {
     processFiles(files, pixelsToRemove);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    var dropArea = document.getElementById('drop-area');
+    var fileInput = document.getElementById('upload');
+
+    // Impedir comportamento padrão para eventos de arrastar e soltar
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    // Adicionar efeitos visuais quando arrastar a imagem sobre a área
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropArea.addEventListener(eventName, () => dropArea.classList.add('hover'), false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, () => dropArea.classList.remove('hover'), false);
+    });
+
+    // Abrir gerenciador de arquivos ao clicar na área de drop
+    dropArea.addEventListener('click', function() {
+        fileInput.click();
+    });
+
+    // Lidar com o drop das imagens
+    dropArea.addEventListener('drop', handleDrop, false);
+
+    function handleDrop(e) {
+        var dt = e.dataTransfer;
+        var files = dt.files;
+
+        handleFiles(files);
+    }
+
+    // Lidar com imagens coladas
+    document.addEventListener('paste', function (e) {
+        var items = (e.clipboardData || e.originalEvent.clipboardData).items;
+        for (var index in items) {
+            var item = items[index];
+            if (item.kind === 'file') {
+                var file = item.getAsFile();
+                handleFiles([file]);
+            }
+        }
+    });
+
+    function handleFiles(files) {
+        const pixelsToRemove = parseInt(document.getElementById('pixel-input').value) || 20;
+        processFiles(files, pixelsToRemove);
+    }
+});
+
 document.getElementById('process-urls').addEventListener('click', function() {
     const urls = document.getElementById('url-input').value.split(',').map(url => url.trim());
     const pixelsToRemove = parseInt(document.getElementById('pixel-input').value) || 20;
