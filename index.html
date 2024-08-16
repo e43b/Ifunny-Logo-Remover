@@ -6,29 +6,31 @@
     <title>Ifunny Logo Remover</title>
     <meta name="description" content="Remove logos from ifunny.co images">
     <link rel="stylesheet" href="styles.css">
-    <!-- SEO: Use rel="alternate" hreflang="pt-BR" for Portuguese version -->
     <link rel="alternate" href="https://e43b.github.io/Ifunny-Logo-Remover/" hreflang="pt-BR">
 </head>
 <body>
     <div class="container">
-      <a href="https://e43b.github.io/Ifunny-Logo-Remover/" target="_blank">
-        <div class="logo">
-            <img src="logo.png" alt="Logo Ifunny Logo Remover">
-        </div>
+        <a href="https://e43b.github.io/Ifunny-Logo-Remover/" target="_blank">
+            <div class="logo">
+                <img src="logo.png" alt="Logo Ifunny Logo Remover">
+            </div>
         </a>
         <!-- Language switch button -->
         <button id="language-switch" onclick="changeLanguage()">Mudar para Português</button>
         <h3> Github <a href="https://github.com/e43b/Ifunny-Logo-Remover/" target="_blank">Ifunny Logo Remover</a></h3>
-        <p>Site to remove the logo from ifunny.co image posts<br>
+        <p id="description">Site to remove the logo from ifunny.co image posts<br>
         Created by <a href="https://github.com/e43b" target="_blank">E43b</a></p>
         
-        <label for="pixel-input">Number of pixels to be removed (default: 20):</label>
+        <label for="pixel-input" id="pixel-label">Number of pixels to be removed (default: 20):</label>
         <input type="number" id="pixel-input" value="20" min="0">
 
-        <label for="upload">Select the files you want to remove the logo from:</label>
-        <input type="file" id="upload" accept="image/*" multiple>
+        <!-- Unified upload button and drag-drop area -->
+        <div id="drop-area" class="drop-area">
+            <p id="drop-text">Drag and drop images here, paste an image using Ctrl+V or <span id="upload-text">click to select</span></p>
+            <input type="file" id="upload" accept="image/*" multiple>
+        </div>
 
-        <label for="url-input">Add links of the images you want to remove the logo from, separate each link with a comma:</label>
+        <label for="url-input" id="url-label">Add links of the images you want to remove the logo from, separate each link with a comma:</label>
         <div class="url-container">
             <input type="text" id="url-input" placeholder="Insert URLs of images separated by comma">
             <button id="process-urls">Process URLs</button>
@@ -38,9 +40,8 @@
         <p id="instructions" style="display:none;">Click on the images to download them.</p>
     </div>
     <script src="script.js"></script>
-
     <script>
-        // Função para trocar o idioma
+        // Function to change the language
         function changeLanguage() {
             var htmlLang = document.documentElement.lang;
             if (htmlLang === "en") {
@@ -54,29 +55,27 @@
             }
         }
 
-        // Função para mudar todos os textos para inglês
+        // Function to change all texts to English
         function changeTextsToEnglish() {
-            document.querySelector('p').innerHTML = 'Site to remove the logo from ifunny.co image posts<br>Created by <a href="https://github.com/e43b" target="_blank">E43b</a>';
-            document.querySelector('label[for="pixel-input"]').textContent = 'Number of pixels to be removed (default: 20):';
-            document.querySelector('label[for="upload"]').textContent = 'Select the files you want to remove the logo from:';
-            document.querySelector('label[for="url-input"]').textContent = 'Add links of the images you want to remove the logo from, separate each link with a comma:';
-            document.querySelector('#language-switch').textContent = 'Mudar para Português';
-            document.querySelector('#instructions').textContent = 'Click on the images to download them.';
+            document.getElementById('description').innerHTML = 'Site to remove the logo from ifunny.co image posts<br>Created by <a href="https://github.com/e43b" target="_blank">E43b</a>';
+            document.getElementById('pixel-label').textContent = 'Number of pixels to be removed (default: 20):';
+            document.getElementById('url-label').textContent = 'Add links of the images you want to remove the logo from, separate each link with a comma:';
+            document.getElementById('drop-text').innerHTML = 'Drag and drop images here, paste an image using Ctrl+V or <span id="upload-text">click to select</span>';
+            document.getElementById('instructions').textContent = 'Click on the images to download them.';
         }
 
-        // Função para mudar todos os textos para português
+        // Function to change all texts to Portuguese
         function changeTextsToPortuguese() {
-            document.querySelector('p').innerHTML = 'Site para remover o logo de imagens de posts do ifunny.co<br>Criado por <a href="https://github.com/e43b" target="_blank">E43b</a>';
-            document.querySelector('label[for="pixel-input"]').textContent = 'Número de pixels a serem removidos (padrão: 20):';
-            document.querySelector('label[for="upload"]').textContent = 'Selecione os arquivos que deseja remover a logo:';
-            document.querySelector('label[for="url-input"]').textContent = 'Adicione os links das imagens que deseja remover a logo, separe cada link com uma vírgula:';
-            document.querySelector('#language-switch').textContent = 'Switch to English';
-            document.querySelector('#instructions').textContent = 'Clique nas imagens para baixá-las.';
+            document.getElementById('description').innerHTML = 'Site para remover o logo de imagens de posts do ifunny.co<br>Criado por <a href="https://github.com/e43b" target="_blank">E43b</a>';
+            document.getElementById('pixel-label').textContent = 'Número de pixels a serem removidos (padrão: 20):';
+            document.getElementById('url-label').textContent = 'Adicione os links das imagens que deseja remover a logo, separe cada link com uma vírgula:';
+            document.getElementById('drop-text').innerHTML = 'Arraste e solte as imagens aqui, cole uma imagem usando Ctrl+V ou <span id="upload-text">clique para selecionar</span>';
+            document.getElementById('instructions').textContent = 'Clique nas imagens para baixá-las.';
         }
 
-        // Definir idioma inicialmente como inglês ao carregar a página
+        // Set the initial language to English when the page loads
         window.onload = function() {
-            changeTextsToEnglish(); // Iniciar com textos em inglês
+            changeTextsToEnglish(); // Start with texts in English
         };
     </script>
 </body>
